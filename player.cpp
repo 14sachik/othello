@@ -5,15 +5,13 @@
  * on (BLACK or WHITE) is passed in as "side". The constructor must finish
  * within 30 seconds.
  */
-Player::Player(Side side) {
-    // Will be set to true in test_minimax.cpp.
-    testingMinimax = false;
-
-    /*
-     * TODO: Do any initialization you need to do here (setting up the board,
-     * precalculating things, etc.) However, remember that you will only have
-     * 30 seconds.
-     */
+Player::~Player(Side side) {
+	p_side = side; 
+	if( side == WHITE)
+		o_side = BLACK; 
+	else
+		o_side = WHITE; 
+	board = new Board(); 
 }
 
 /*
