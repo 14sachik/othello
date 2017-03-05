@@ -194,7 +194,7 @@ int Board::heuristic_score(Side side)
                     }
                 else
                 {
-                        sum += heuristic_vals[i*j];
+                        sum -= heuristic_vals[i*j];
                 }
             }
         }
