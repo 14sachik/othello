@@ -5,7 +5,7 @@
  * on (BLACK or WHITE) is passed in as "side". The constructor must finish
  * within 30 seconds.
  */
-Player::~Player(Side side) {
+Player::Player(Side side) {
 	p_side = side; 
 	if( side == WHITE)
 		o_side = BLACK; 
