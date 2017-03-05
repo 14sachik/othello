@@ -178,3 +178,26 @@ void Board::setBoard(char data[]) {
         }
     }
 }
+
+int Board::heuristic_score(Side side)
+{
+    int sum = 0; 
+    for(int i = 0; i < 8; i++) 
+    {
+        for (int j =0; j < 8; j++) 
+        {
+            if (occupied(i, j)) 
+            {
+                if (get(side, i, j)) 
+                    {
+                          sum += heuristic_vals[i*j];
+                    }
+                else
+                {
+                        sum += heuristic_vals[i*j];
+                }
+            }
+        }
+    }
+    return sum; 
+}
