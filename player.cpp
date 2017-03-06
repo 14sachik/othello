@@ -1,5 +1,7 @@
 #include "player.hpp"
 #include <stdio.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 /*
@@ -35,7 +37,7 @@ Player::~Player() {
  * The move returned must be legal; if there are no valid moves for your side,
  * return nullptr.
  */
-int Player::minimax(Board *board, Side side, int depth, Move& *best_move)
+int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 {
 	best_move = NULL; 
 	if (depth == 0) 
@@ -100,10 +102,37 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
      * TODO: Implement how moves your AI should play here. You should first
      * process the opponent's opponents move before calculating your own move
      */
-	board->doMove(opponentsMove, o_side);
 	Move *m1;
-	minimax(board,p_side,2,m1);
-	board->doMove(m1, p_side);
+	vector<Move> mvarr;
+	board->doMove(opponentsMove, o_side);
+	for(int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++) 
+		{
+			m1 = new Move(i, j); 
+			if(board->checkMove(m0, side)) 
+			{
+				mvarr.push_back(m1);
+			}
+		}
+	}
+	
+	
+
+	int highest_score = -10000;
+	Move *best_move;
+	for (int i = 0; i < mvarr.size(); i++) {
+		Board *new_board = board->copy();
+		new_board->doMove(mvarr[i], p_side); 
+		int new_score = minimax(new_board, o_side, 2, mvarr[i]);
+		if (new_score > highest_score) {
+			highest_score = new_score;
+			best_move = mvarr[i];	
+		}
+	}
+	
+
+	board->doMove(best_move, p_side);
 	
 	
 	
