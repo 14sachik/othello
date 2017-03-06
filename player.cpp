@@ -74,6 +74,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *&best_move)
 			   }
 		}
 	}
+	return best_score
 }
 
 Move *Player::doMove(Move *opponentsMove, int msLeft) {
