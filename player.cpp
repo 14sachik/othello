@@ -46,7 +46,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 	Move *m0, *m1; 
 	Board *new_board; 
 	Side otherSide = side == BLACK ? WHITE : BLACK;
-	printf("this works");
+	//printf("this works");
 
 	for(int i = 0; i < 8; i++)
 	{
