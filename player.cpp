@@ -42,16 +42,37 @@ int Player::minimax(Board *board, Side side, int depth, int lower_bound, int upp
 	}
 	int best_score = -1000000; 
 	int new_score; 
-	Move *m0; 
+	Move *m0, *m1; 
 	Board *new_board; 
+	Side otherSide = side == BLACK ? WHITE : BLACK;
+
 	for(int i = 0; i < 8; i++)
 	{
 		for (int j = 0; i < 8; j++) 
 		{
-			new_move = new Move(i, j); 
-			if(checkmove(new_move, i, j)
+			m0 = new Move(i, j); 
+			if(checkmove(m0, i, j))
 			   {
-				   
+				   new_board = board->copy();
+				   new_board->doMove(m0, side); 
+				   new_score = minimax(new_board, otherside, depth, -upperbound, -lowerbound, m1); 
+				   if(m1 != NULL)
+				   {
+					   delete m1;
+				   }
+				   if(new_score > best_score) 
+				   {
+					   best_score = new_score; 
+					   if( best_move != NULL)
+					   {
+						   delete best_move; 
+					   }
+					   best_move = new_move; 
+				   }
+				   else
+				   {
+					   
+				   }
 			   }
 		}
 	}
