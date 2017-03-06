@@ -114,7 +114,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			{
 				mvarr.push_back(m1);
 				board->doMove(m1,p_side);
-				return nullptr;
+				return m1;
 			}
 		}
 	}
