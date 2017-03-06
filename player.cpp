@@ -103,7 +103,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
      * process the opponent's opponents move before calculating your own move
      */
 	Move *m1;
-	vector<Move> mvarr;
+	vector<*Move> mvarr;
 	board->doMove(opponentsMove, o_side);
 	for(int i = 0; i < 8; i++)
 	{
