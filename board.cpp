@@ -190,11 +190,11 @@ int Board::heuristic_score(Side side)
             {
                 if (get(side, i, j)) 
                     {
-                          sum += heuristic_vals[i*j];
+                          sum += heuristic_vals[i + 8*j];
                     }
                 else
                 {
-                        sum -= heuristic_vals[i*j];
+                        sum -= heuristic_vals[i + 8*j];
                 }
             }
         }
