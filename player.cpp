@@ -35,7 +35,7 @@ Player::~Player() {
  * The move returned must be legal; if there are no valid moves for your side,
  * return nullptr.
  */
-int Player::minimax(Board *board, Side side, int depth, Move *best_move)
+int Player::minimax(Board *board, Side side, int depth, Move& *best_move)
 {
 	best_move = NULL; 
 	if (depth == 0) 
