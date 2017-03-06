@@ -113,12 +113,9 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			if(board->checkMove(m1, p_side)) 
 			{
 				mvarr.push_back(m1);
-				board->doMove(m1,p_side);
-				return m1;
 			}
 		}
 	}
-	
 	
 	/*
 	int highest_score = 10000;
@@ -133,11 +130,27 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		}
 	}
 	*/
+	
+	int highest_score = -10000;
+	Move *best_move;
+	for (int i = 0; i < mvarr.size(); i++) {
+		Board *new_board = board->copy();
+		new_board->doMove(mvarr[i], p_side); 
+		int my_score = new_board->heuristic_score(p_side);
+		int opp_score = new_board->heuristic_score(o_side);
+		int diff = my_score - opp_score
+		if (diff > highest_score) {
+			highest_score = diff;
+			best_move = mvarr[i];	
+		}
+	}
 
-	//board->doMove(best_move, p_side);
+	
+
+	board->doMove(best_move, p_side);
 	
 	
 	
 	
-    return nullptr;
+    return best_move;
 }
