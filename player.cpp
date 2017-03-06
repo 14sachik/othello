@@ -51,7 +51,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 		for (int j = 0; j < 8; j++) 
 		{
 			m0 = new Move(i, j); 
-			if(checkmove(m0, i, j))
+			if(board->checkmove(m0, i, j))
 			{
 				new_board = board->copy();
 				new_board->doMove(m0, side); 
@@ -89,7 +89,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 			   }
 		}
 	}
-	return best_score
+	return best_score;
 }
 
 Move *Player::doMove(Move *opponentsMove, int msLeft) {
