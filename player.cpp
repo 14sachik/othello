@@ -113,12 +113,14 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			if(board->checkMove(m1, p_side)) 
 			{
 				mvarr.push_back(m1);
+				board->doMove(m1,p_side);
+				return nullptr;
 			}
 		}
 	}
 	
 	
-
+	/*
 	int highest_score = 10000;
 	Move *best_move;
 	for (int i = 0; i < mvarr.size(); i++) {
@@ -130,9 +132,9 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			best_move = mvarr[i];	
 		}
 	}
-	
+	*/
 
-	board->doMove(best_move, p_side);
+	//board->doMove(best_move, p_side);
 	
 	
 	
