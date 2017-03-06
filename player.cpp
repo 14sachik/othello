@@ -100,6 +100,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 	board->doMove(opponentsMove, o_side);
 	Move *m1;
 	minimax(board,p_side,2,m1);
+	board->doMove(m1, p_side);
 	
 	
 	
