@@ -1,4 +1,5 @@
 #include "player.hpp"
+#include <stdio.h>
 
 /*
  * Constructor for the player; initialize everything here. The side your AI is
