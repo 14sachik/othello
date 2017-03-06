@@ -102,12 +102,15 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
      * TODO: Implement how moves your AI should play here. You should first
      * process the opponent's opponents move before calculating your own move
      */
-	if (!board->hasMoves(p_side)) {
-		return nullptr;
-	}
+
 	Move *m1;
 	vector<Move*> mvarr;
 	board->doMove(opponentsMove, o_side);
+	
+	if (!board->hasMoves(p_side)) {
+		return NULL;
+	}
+	
 	for(int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++) 
