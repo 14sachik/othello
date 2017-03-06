@@ -55,7 +55,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *&best_move)
 			{
 				new_board = board->copy();
 				new_board->doMove(m0, side); 
-				new_score = minimax(new_board, otherside, depth - 1, m0); 
+				new_score = minimax(new_board, otherSide, depth - 1, m0); 
 				if (depth%2 == 0) {
 					if(new_score > best_score) 
 					{
