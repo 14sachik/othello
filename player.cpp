@@ -51,7 +51,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 		for (int j = 0; j < 8; j++) 
 		{
 			m0 = new Move(i, j); 
-			if(board->checkMove(m0, i, j))
+			if(board->checkMove(m0, side))
 			{
 				new_board = board->copy();
 				new_board->doMove(m0, side); 
