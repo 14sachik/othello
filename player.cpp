@@ -139,5 +139,5 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 	
 	
 	
-    return best_move;
+    return nullptr;
 }
