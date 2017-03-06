@@ -73,8 +73,7 @@ int Player::minimax(Board *board, Side side, int depth, int lower_bound, int upp
 				   {
 					   delete m0; 
 				   }
-				   if( new_score > lower_board) 
-				   {
+				   
 					   
 			   }
 		}
