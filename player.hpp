@@ -19,6 +19,7 @@ public:
     Board *board;
     Side p_side;
     Side o_side;
+    int minimax(Board *board, Side side, int depth, Move *best_move);
 };
 
 #endif
