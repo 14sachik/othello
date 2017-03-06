@@ -110,7 +110,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		for (int j = 0; j < 8; j++) 
 		{
 			m1 = new Move(i, j); 
-			if(board->checkMove(m0, side)) 
+			if(board->checkMove(m1, p_side)) 
 			{
 				mvarr.push_back(m1);
 			}
