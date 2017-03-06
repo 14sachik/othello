@@ -33,7 +33,7 @@ Player::~Player() {
  * The move returned must be legal; if there are no valid moves for your side,
  * return nullptr.
  */
-int Player::minimax(Board *board, Side side, int depth, Move *&best_move)
+int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 {
 	best_move = NULL; 
 	if (depth == 0) 
@@ -97,7 +97,11 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
      * TODO: Implement how moves your AI should play here. You should first
      * process the opponent's opponents move before calculating your own move
      */
-	board->doMove(opponentsMove, o_side); 
+	board->doMove(opponentsMove, o_side);
+	Move *m1;
+	minimax(board,p_side,2,m1);
+	
+	
 	
 	
     return nullptr;
