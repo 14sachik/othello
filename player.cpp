@@ -33,12 +33,37 @@ Player::~Player() {
  * The move returned must be legal; if there are no valid moves for your side,
  * return nullptr.
  */
+int Player::minimax(Board *board, Side side, int depth, int lower_bound, int upper_bound, Move *&best_move)
+{
+	best_move = NULL; 
+	if (depth == 0) 
+	{
+		return board->heuristic_score(side);
+	}
+	int best_score = -1000000; 
+	int new_score; 
+	Move *m0; 
+	Board *new_board; 
+	for(int i = 0; i < 8; i++)
+	{
+		for (int j = 0; i < 8; j++) 
+		{
+			new_move = new Move(i, j); 
+			if(checkmove(new_move, i, j)
+			   {
+				   
+			   }
+		}
+	}
+}
+
 Move *Player::doMove(Move *opponentsMove, int msLeft) {
     /*
      * TODO: Implement how moves your AI should play here. You should first
      * process the opponent's opponents move before calculating your own move
      */
 	board->doMove(opponentsMove, o_side); 
+	
 	
     return nullptr;
 }
