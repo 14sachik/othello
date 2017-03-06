@@ -1,5 +1,6 @@
 #include "player.hpp"
 #include <stdio.h>
+using namespace std;
 
 /*
  * Constructor for the player; initialize everything here. The side your AI is
@@ -46,7 +47,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 	Move *m0, *m1; 
 	Board *new_board; 
 	Side otherSide = side == BLACK ? WHITE : BLACK;
-	//printf("this works");
+	cout << "this works" << endl;
 
 	for(int i = 0; i < 8; i++)
 	{
