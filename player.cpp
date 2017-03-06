@@ -138,7 +138,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		new_board->doMove(mvarr[i], p_side); 
 		int my_score = new_board->heuristic_score(p_side);
 		int opp_score = new_board->heuristic_score(o_side);
-		int diff = my_score - opp_score
+		int diff = my_score - opp_score;
 		if (diff > highest_score) {
 			highest_score = diff;
 			best_move = mvarr[i];	
