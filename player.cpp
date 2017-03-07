@@ -140,7 +140,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		}
 	}
 	
-	
+	/* Loops through all the possible moves and applies the minimax algorithm to the new board after each move has been made. */
 	int highest_score = -10000;
 	Move *best_move;
 	for (int i = 0; i < mvarr.size(); i++) {
