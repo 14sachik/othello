@@ -123,7 +123,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		}
 	}
 	
-	
+	/*
 	int highest_score = -10000;
 	Move *best_move;
 	for (int i = 0; i < mvarr.size(); i++) {
@@ -135,8 +135,8 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			best_move = mvarr[i];	
 		}
 	}
+	*/
 	
-	/*
 	int highest_score = -10000;
 	Move *best_move;
 	for (int i = 0; i < mvarr.size(); i++) {
@@ -150,7 +150,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			best_move = mvarr[i];	
 		}
 	}
-	*/
+	
 
 	
 
