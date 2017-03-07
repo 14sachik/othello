@@ -41,7 +41,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 		return board->heuristic_score(side);
 	}
 	int best_score;
-	if (depth%2 == 1)
+	if (depth%2 == 0)
 	{best_score = -1000000; 
 	}
 	else {
@@ -66,7 +66,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 				// Calculates the score for the other players next turn.
 				new_score = minimax(new_board, otherSide, depth - 1, m0); 
 				// Maximizes score if the player is us.
-				if (depth%2 == 1) {
+				if (depth%2 == 0) {
 					if(new_score > best_score) 
 					{
 						best_score = new_score; 
