@@ -37,7 +37,12 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 	{
 		return board->heuristic_score(side);
 	}
-	int best_score = -1000000; 
+	if (depth%2 == 0)
+	{int best_score = -1000000; 
+	}
+	else {
+	int best_score = 1000000; 
+	}
 	int new_score; 
 	Move *m0, *m1; 
 	Board *new_board; 
