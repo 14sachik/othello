@@ -51,7 +51,9 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 	Move *m0, *m1; 
 	Board *new_board; 
 	Side otherSide = side == BLACK ? WHITE : BLACK;
-
+	
+	// Loops through all the moves and calls minimax on the new board to get the new score of making that move. 
+	// Calculates the best move for each succesive recursive call for the opponent and for the player.
 	for(int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++) 
@@ -61,7 +63,9 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 			{
 				new_board = board->copy();
 				new_board->doMove(m0, side); 
+				// Calculates the score for the other players next turn.
 				new_score = minimax(new_board, otherSide, depth - 1, m0); 
+				// Maximizes score if the player is us.
 				if (depth%2 == 0) {
 					if(new_score > best_score) 
 					{
@@ -78,6 +82,7 @@ int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 					}
 				}
 				else {
+					// Minimizes score if player is opponent.
 					if(new_score < best_score) 
 					{
 						best_score = new_score; 
