@@ -178,7 +178,12 @@ void Board::setBoard(char data[]) {
         }
     }
 }
-
+/*
+ * Calculates the heuristic score of the board for the given side. Heuristic 
+ * values are obtained from https://github.com/kartikkukreja/blog-codes/blob/master/src/
+ *Heuristic%20Function%20for%20Reversi%20%28Othello%29.cpp.
+ * 
+ */
 int Board::heuristic_score(Side side)
 {
     int heuristic_vals[64] = {20,-3,11, 8, 8,11,-3,20,
