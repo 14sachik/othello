@@ -124,7 +124,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 	}
 	
 	
-	int highest_score = 10000;
+	int highest_score = -10000;
 	Move *best_move;
 	for (int i = 0; i < mvarr.size(); i++) {
 		Board *new_board = board->copy();
