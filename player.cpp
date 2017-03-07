@@ -29,6 +29,9 @@ Player::~Player() {
 }
 
 /* Minimax function that takes an argument of a board pointer, side, depth, and a reference to a move pointer. 
+* The function works by checking whether it is the player or the opponent. If we are the player, the function 
+* finds a move that maximizes the number of points we have. If the opponent is playing, we try to minimize the 
+* number of points the player has. We a define a depth of 2. 
 */
 int Player::minimax(Board *board, Side side, int depth, Move *best_move)
 {
