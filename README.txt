@@ -1,1 +1,2 @@
-
+We both reviewed the pseudocode for the MiniMax algorithm. Sachi wrote the function that gave the board a score for the heurisitic score for a given side. Marlon implemented the Minimax and heurisitic algorithm in the player file. We both edited the minimax function to make it work correctly. 
+Initially, our AI was random. Then we used the scores from the heurisitics to make decisions on which move was best. We then used minimax to look ahead and try to find the move that would minimize the opponents score and maximize our score the most. 
