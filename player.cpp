@@ -132,7 +132,9 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 		return NULL;
 	}
 	
+	int countMoves;
 	/* Find all possible moves for a player. */
+	/* Counter just counts amount of legal moves from a position. */
 	for(int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++) 
@@ -140,6 +142,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft) {
 			m1 = new Move(i, j); 
 			if(board->checkMove(m1, p_side)) 
 			{
+				countMoves += 1;
 				mvarr.push_back(m1);
 			}
 		}
